@@ -50,6 +50,13 @@ public class QuickStarter {
         System.exit(0);
     }
 
+    public static void start(String key){
+        init();
+        //Start spider
+        OOSpider.create(Site.me(), clazzMap.get(key)).addUrl(urlMap.get(key)).addPipeline(new MultiPagePipeline()).addPipeline(new ConsolePipeline()).runAsync();
+
+    }
+
     private static String readKey(String key) {
         Scanner stdin = new Scanner(System.in);
         System.out.println("Choose a Spider demo:");

@@ -1,19 +1,11 @@
 package us.codecraft.webmagic.model.samples;
 
-import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.Task;
-import us.codecraft.webmagic.model.OOSpider;
-import us.codecraft.webmagic.monitor.SpiderMonitor;
-import us.codecraft.webmagic.pipeline.PageModelPipeline;
+import java.io.IOException;
+
 import us.codecraft.webmagic.model.annotation.ExtractBy;
 import us.codecraft.webmagic.model.annotation.ExtractByUrl;
 import us.codecraft.webmagic.model.annotation.HelpUrl;
 import us.codecraft.webmagic.model.annotation.TargetUrl;
-
-import javax.management.JMException;
-import java.io.IOException;
-
 /**
  * @author code4crafter@gmail.com <br>
  */
@@ -30,17 +22,17 @@ public class Kr36NewsModel {
     @ExtractByUrl
     private String url;
 
-    public static void main(String[] args) throws IOException, JMException {
+    public static void main(String[] args) throws IOException, Exception {
         //Just for benchmark
-        Spider thread = OOSpider.create(Site.me().addStartUrl("http://www.36kr.com/").setSleepTime(0), new PageModelPipeline() {
-            @Override
-            public void process(Object o, Task task) {
-
-            }
-        }, Kr36NewsModel.class).thread(20);
-        thread.start();
-        SpiderMonitor spiderMonitor = SpiderMonitor.instance();
-        spiderMonitor.register(thread);
+//        Spider thread = OOSpider.create(Site.me().addStartUrl("http://www.36kr.com/").setSleepTime(0), new PageModelPipeline() {
+//            @Override
+//            public void process(Object o, Task task) {
+//
+//            }
+//        }, Kr36NewsModel.class).thread(20);
+//        thread.start();
+//        SpiderMonitor spiderMonitor = SpiderMonitor.instance();
+//        spiderMonitor.register(thread);
     }
 
     public String getTitle() {

@@ -1,15 +1,10 @@
 package us.codecraft.webmagic.samples;
 
+import java.util.List;
+
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.monitor.SpiderMonitor;
 import us.codecraft.webmagic.processor.PageProcessor;
-import us.codecraft.webmagic.scheduler.QueueScheduler;
-import us.codecraft.webmagic.scheduler.component.BloomFilterDuplicateRemover;
-
-import javax.management.JMException;
-import java.util.List;
 
 /**
  * @author code4crafter@gmail.com <br>
@@ -33,9 +28,9 @@ public class OschinaBlogPageProcesser implements PageProcessor {
 
     }
 
-    public static void main(String[] args) throws JMException {
-        Spider spider = Spider.create(new OschinaBlogPageProcesser()).setScheduler(new QueueScheduler().setDuplicateRemover(new BloomFilterDuplicateRemover(2000)));
-        SpiderMonitor.instance().register(spider);
-        spider.run();
+    public static void main(String[] args) throws Exception {
+//        spider spider = spider.create(new oschinablogpageprocesser()).setscheduler(new queuescheduler().setduplicateremover(new bloomfilterduplicateremover(2000)));
+//        spidermonitor.instance().register(spider);
+//        spider.run();
     }
 }

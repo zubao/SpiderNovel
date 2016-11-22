@@ -1,5 +1,8 @@
 package us.codecraft.webmagic.model.samples;
 
+import java.util.Collection;
+import java.util.List;
+
 import us.codecraft.webmagic.MultiPageModel;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.model.OOSpider;
@@ -9,9 +12,6 @@ import us.codecraft.webmagic.model.annotation.TargetUrl;
 import us.codecraft.webmagic.pipeline.ConsolePipeline;
 import us.codecraft.webmagic.pipeline.MultiPagePipeline;
 import us.codecraft.webmagic.scheduler.RedisScheduler;
-
-import java.util.Collection;
-import java.util.List;
 
 /**
  * @author code4crafter@gmail.com <br>
